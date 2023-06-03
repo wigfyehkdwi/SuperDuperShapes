@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
 
     void Spawn()
     {
-        int prefabIndex = Random.Range(0, shapePrefabs.Length - 1);
+        int prefabIndex = Random.Range(0, shapePrefabs.Length);
         Instantiate(shapePrefabs[prefabIndex], Vector3.zero, Quaternion.identity);
     }
 
