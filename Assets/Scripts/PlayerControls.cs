@@ -7,12 +7,6 @@ public class PlayerControls : MonoBehaviour
     public float moveSpeed = 600f;
     private float movement = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Time.timeScale = 1; // ? Is this necesary?
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +20,6 @@ public class PlayerControls : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Time.timeScale = 0;
+        GameObject.Find("GameController").GetComponent<GameController>().GameOver();
     }
 }

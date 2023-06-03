@@ -5,15 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject[] shapePrefabs;
+    public float spawnDelay = 2f;
+    public float spawnTime = 3f;
+    public GameObject gameOverCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 1;
+        InvokeRepeating("Spawn", spawnDelay, spawnTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    void Spawn()
     {
+        int prefabIndex = Random.Range(0, shapePrefabs.Length - 1);
+        Instantiate(shapePrefabs[prefabIndex], Vector3.zero, Quaternion.identity);
+    }
 
+    public void GameOver()
+    {
+        CancelInvoke("Spawn");
+        gameOverCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 }
