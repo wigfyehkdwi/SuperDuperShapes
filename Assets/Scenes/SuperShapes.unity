@@ -349,7 +349,7 @@ MonoBehaviour:
   showEditorLensFlareBehavior: 0
   showEditorGlareBehavior: 0
   debugView: 0
-  workflow: 0
+  workflow: 1
   selectiveRenderLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
